@@ -7,38 +7,95 @@
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 
-<!-- Navigation Bar -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+ h1 {
+  font-size: 75px;
+ }
+ p{
+  font-size: 25px;
+ }
+</style>
+
+<script>
+ /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: #333333;
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+</script>
+<!--sidebar-->
+<style>
+ /* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
 }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: transparent;
 }
 
-.topnav a.active {
-  background-color: #666666;
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: transparent;
   color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: transparent;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
 }
 </style>
+
 <style>
     iframe {
      max-width: 100%;
@@ -57,11 +114,14 @@ img {
 <!-- FOOTER -->
 <style>
 footer {
-    margin-top: 20px;
+ padding-top: inherit;
   text-align: center;
-  padding: 10px;
-  background-color: #333333;
+  background-color: transparent;
   color: white;
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
 }
 </style>
 
@@ -74,18 +134,40 @@ body {
   background-repeat: repeat-x;
   background-size: contain;
   background-position: center;
+  width: 100%;
+  height: auto;
 }
    </style>
-    <div class="topnav">
-  <a href="index.html">Bailey Weiss</a>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<a class="active" href="index.html"><b>Bailey Weiss</b></a>
   <a href="about.html">About</a>
   <a href="employment.html">Employment History</a>
-  <a class="active" href="education.html">Education</a>
+  <a href="education.html">Education</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="contact.html">Contact</a>
 </div>
 
-<img src="images/education.png" alt="Education" width=100% height=100%>
+<div id="main">
+  <button class="openbtn" onclick="openNav()">&#9776;</button>
+</div>
+
+<h1 style="text-align: center; color: white;">Education</h1>
+
+<center>
+<img src="images/FSUseal.png" alt="FSU Seal" width=25% height=25%>
+
+<p style="color: white">B.S.E. in Information Technology with Minor in Cyber Criminology, Expected Graduation May 2022. In-major
+GPA: 3.4. </p>
+<p style="color: white">Undergraduate Coursework: Operating Systems; Databases; Algorithms; Programming Languages;
+Information Technologies; Technical Communications. </p>
+<p style="color: white"> Classes Taken: Object-oriented Programming with a focus in Java; Web Development; Technical
+Communications; Information Technology; Database Concepts; Programming in C++; Leadership Theory for
+the Technology Major </p>
+
+</center>
+
 <center>
          <img alt="Education" src="images/Education2.png">
       </a>
